@@ -22,14 +22,14 @@
 
 1. openssl x509 -in ./Root\ Certificates/AddTrustExternalCARoot.crt -outform pem -out ./pem/AddTrustExternalCARoot.crt.pem 
 
-2. openssl x509 -in ./Root\ Certificates/COMODORSAAddTrustCA.crt -outform pem -out ./pem/COMODORSAAddTrustCA.crt.pem
+2. openssl x509 -in ./Root\ Certificates/RSAAddTrustCA.crt -outform pem -out ./pem/RSAAddTrustCA.crt.pem
 
-3. openssl x509 -in ./Root\ Certificates/COMODORSAExtendedValidationSecureServerCA.crt -outform pem -out ./pem/COMODORSAExtendedValidationSecureServerCA.crt.pem
+3. openssl x509 -in ./Root\ Certificates/RSAExtendedValidationSecureServerCA.crt -outform pem -out ./pem/RSAExtendedValidationSecureServerCA.crt.pem
 
 ### Create PEM encoded CAChain
 
-1. cat ./pem/COMODORSAExtendedValidationSecureServerCA.pem > ./pem/CAChain.pem
-2. cat ./pem/COMODORSAAddTrustCA.pem >> ./pem/CAChain.pem
+1. cat ./pem/RSAExtendedValidationSecureServerCA.pem > ./pem/CAChain.pem
+2. cat ./pem/RSAAddTrustCA.pem >> ./pem/CAChain.pem
 3. cat ./pem/AddTrustExternalCARoot.pem >> ./pem/CAChain.pem
 
 ### Upload with AWS CLI or create it manualy in ACM
